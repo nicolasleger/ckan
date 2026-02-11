@@ -1,7 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../lib/ckan')
 require 'vcr'
 require 'webmock'
-include WebMock
+require 'rspec/its'
+include WebMock::API
 
 VCR.configure do |c|
   c.hook_into :webmock
@@ -10,7 +11,6 @@ VCR.configure do |c|
 end
 
 RSpec.configure do |config|
-  config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
 end

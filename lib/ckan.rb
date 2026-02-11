@@ -13,6 +13,7 @@ end
 require 'open-uri'
 require "net/http"
 require "uri"
+require 'cgi'
 require 'json'
 require_relative 'ckan/model'
 require_relative 'ckan/group'

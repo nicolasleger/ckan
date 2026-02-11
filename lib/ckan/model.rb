@@ -33,7 +33,7 @@ module CKAN
     end
 
     def self.read_remote_json_data(address)
-      JSON.parse(open(address).read)
+      JSON.parse(URI.open(address).read)
     end
 
     def self.lazy_reader(*names)

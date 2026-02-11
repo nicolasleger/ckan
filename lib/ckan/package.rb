@@ -17,8 +17,8 @@ module CKAN
       else
         query = "?"
         query += options.to_a.
-          map{|k,v| v.is_a?(Array) ? v.map{|vv| "#{k}=#{URI.encode(vv)}"}.join("&") :
-            "#{k}=#{URI.encode(v)}"}.join("&")
+          map{|k,v| v.is_a?(Array) ? v.map{|vv| "#{k}=#{CGI.escape(vv)}"}.join("&") :
+            "#{k}=#{CGI.escape(v)}"}.join("&")
         result = read_remote_json_data(self.search + query)
         if result["count"] != result["results"].size
           query += "&offset=#{result["results"].size}&limit=#{result["count"] + result["results"].size}"
