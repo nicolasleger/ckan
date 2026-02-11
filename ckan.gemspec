@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/apohllo/ckan"
   s.summary     = "Ruby Client for Comprehensive Knowledge Archive Network"
   s.description = "Ruby Client for Comprehensive Knowledge Archive Network. Allows for querying the CKAN repository using REST API"
+  s.license     = "MIT"
 
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "ckan"
